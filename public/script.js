@@ -2,7 +2,7 @@
 
 function placeIconsPerSection() {
   const sections = document.querySelectorAll('.section');
-  const iconSources = ['/icon1.png', '/icon2.png', '/icon3.png', '/icon4.png'];
+  const iconSources = ['img/icon1.png', 'img/icon2.png', 'img/icon3.png', 'img/icon4.png'];
   const iconSize = 100;
   const margin = 20;
   const totalIcons = 21;
