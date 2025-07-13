@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Репетитор Елена Юрьевна</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container1">
+      <div class="pngshka"><img src="/Group 3.png" alt=""></div>
+      <nav class="spicok" id="menu">
+        <ul>
+          <li class="texta"><a href="#about">Обо мне</a></li>
+          <li class="texta"><a href="#services">Занятия</a></li>
+          <li class="texta"><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="burger" onclick="document.getElementById('menu').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <div class="scroll-dots">
+    <a href="#hero" class="dot"></a>
+    <a href="#about" class="dot"></a>
+    <a href="#services" class="dot"></a>
+    <a href="#contact" class="dot"></a>
+  </div>
+
+  <div id="fullpage">
+    <section class="section hero" id="hero">
+      <div class="container">
+        <div class="hero-text">
+          <h2>Подготовка к школе и помощь младшим школьникам</h2>
+          <p>Занятия офлайн и онлайн. Индивидуально и в группе.</p>
+        </div>
+        <div class="hero-action">
+          <a href="#contact" class="btn">Записаться</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-flex">
+        <div class="about-text">
+          <h2 class="opopo">О преподавателе</h2>
+          <p class="opppo">Алехина Елена Юрьевна — педагог с высшим образованием и профессиональной переподготовкой. Повышение квалификации по ФГОС и нейропсихологии. Опытная, внимательная, работаю с учётом особенностей каждого ребёнка.</p>
+        </div>
+        <div class="about-btn">
+          <button class="btn btn-cert" onclick="document.getElementById('cert-modal').style.display='flex'">Удостоверения</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="about-text">
+          <h2 class="opopo">Программы обучения</h2>
+          <div class="table-wrapper">
+            <ul class="opppo1">
+              <li class="lol">🎓 <strong>Подготовка к школе:</strong> счёт, чтение, письмо, звуки, слоги, психологическая адаптация (с 5 и 6 лет)</li>
+              <li class="lol">📘 <strong>Начальная школа:</strong> помощь с ДЗ, поддержка по программе</li>
+              <li class="lol">✖️ <strong>Таблица умножения:</strong> объяснение, лайфхаки, методы</li>
+              <li class="lol">💻 <strong>Онлайн-занятия:</strong> индивидуально — 1000 ₽ / в группе — 850 ₽</li>
+              <li class="lol">🎨 <strong>Мастер-классы:</strong> для детей и взрослых</li>
+            </ul>
+          </div>
+          
+          <div class="table-as-text-mobile">
+            <p>🎓 <strong>Подготовка к школе:</strong> счёт, чтение, письмо, звуки, слоги, психологическая адаптация</p>
+            <p>📘 <strong>Начальная школа:</strong> помощь с ДЗ, поддержка по программе</p>
+            <p>✖️ <strong>Таблица умножения:</strong> объяснение, лайфхаки, методы</p>
+            <p>💻 <strong>Онлайн-занятия:</strong><br>Индивидуально — 1000 ₽<br>В группе — 850 ₽</p>
+            <p>🎨 <strong>Мастер-классы:</strong> для детей и взрослых</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+        <div class="about-text" style="width: 100%; max-width: 600px;">
+          <h2 class="opopo" id="center1">Контакты и запись</h2>
+          <form id="contactForm" style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="text" name="name" placeholder="Имя родителя" required>
+            <input type="text" name="child" placeholder="Имя ребёнка и возраст" required>
+            <input type="tel" name="phone" placeholder="Телефон" required>
+            <textarea name="message" placeholder="Комментарий (необязательно)"></textarea>
+            <button type="submit" class="btn">Отправить заявку</button>
+          </form>
+          <p class="note">Или напишите напрямую в <a href="https://t.me/your_bot" target="_blank">Telegram</a></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Модальное окно удостоверений -->
+  <div id="cert-modal" class="cert-modal" onclick="closeModal(event)">
+    <div class="cert-modal-content" onclick="event.stopPropagation()">
+      <span class="cert-close" onclick="document.getElementById('cert-modal').style.display='none'">&times;</span>
+      <div class="cert-grid">
+        <div class="cert-item"><img src="/perepd.jpeg" alt="Диплом образования"></div>
+        <div class="cert-item"><img src="/pkv.jpeg" alt="Квалификация ФГОС"></div>
+        <div class="cert-item"><img src="/perepodg.jpeg" alt="Нейропсихология"></div>
+        <div class="cert-item"><img src="/podgshk.jpeg" alt="Подготовка к школе"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Увеличение фото -->
+  <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+    <img src="" alt="Просмотр">
+  </div>
+
+  <script>
+    const dots = document.querySelectorAll('.scroll-dots a');
+    const sections = document.querySelectorAll('.section');
+
+    window.addEventListener('scroll', () => {
+      let index = sections.length;
+      while (--index && window.scrollY + window.innerHeight / 2 < sections[index].offsetTop) {}
+
+      dots.forEach(dot => dot.classList.remove('active'));
+      if (dots[index]) dots[index].classList.add('active');
+    });
+  </script>
+
+<script>
+  function closeModal(event) {
+    const modal = document.getElementById('cert-modal');
+    if (event.target === modal) modal.style.display = 'none';
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.getElementById('cert-modal').style.display = 'none';
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  });
+
+  const certImages = document.querySelectorAll('.cert-item img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+
+  certImages.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+</script>
+  <script src="script.js"></script>
+</body>
+</html>

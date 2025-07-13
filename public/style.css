@@ -1,0 +1,749 @@
+/* Базовая стилизация сайта репетитора */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background: linear-gradient(to bottom, #489AFF, #71B0FF);
+  color: white;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 10px;
+  gap: 80px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.pngshka img {
+  height: 120px;
+  width: auto;
+}
+
+.hero, .about, .services, .contact {
+  background: #fdfdfd;
+  padding: 60px 20px;
+}
+
+.hero .container,
+.hero-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-text, .hero-action {
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero h2,
+.hero p,
+.opopo,
+.opppo,
+.opppo1 {
+  text-align: left;
+}
+
+.hero h2,
+.opopo {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero p,
+.opppo,
+.opppo1 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #4c68af;
+  height: 55px;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 2em;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 1.1em;
+}
+
+.btn:hover {
+  background-color: #489AFF;
+  transform: scale(1.10);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+section {
+  padding: 40px 20px;
+}
+
+section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.services ul {
+  list-style: disc;
+  padding-left: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #4c68af;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #3b5092;
+}
+
+.footer {
+  background-color: #4c68af;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+.note {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.texta {
+  font-size: 150%;
+  position: relative;
+}
+
+.texta a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.texta a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: #ffffff;
+  border-radius: 2px;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.texta a:hover::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.about-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 70px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 2;
+  max-width: 60%;
+}
+
+.about-btn {
+  flex: 0 0 auto;
+}
+
+.cert-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.cert-modal-content {
+  background: #fff;
+  padding: 20px;
+  max-width: 960px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.cert-close {
+  position: absolute;
+  top: -10px;
+  right: 1px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.cert-item {
+  border: 2px dashed #4c68af;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.cert-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.cert-item p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero-layout,
+  .about-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about-btn {
+    width: 100%;
+    text-align: left;
+  }
+  .hero h2,
+  section h2 {
+    font-size: 1.4rem;
+  }
+  .btn {
+    padding: 10px 20px;
+  }
+  .hero-text,
+  .hero-action {
+    flex: 1 1 100%;
+  }
+
+  #icons, #icons2, .side-icons, .scroll-dots {
+    display: none !important;
+  }
+
+  /* Увеличиваем размер текста */
+  html {
+    font-size: 130%;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Меню бургер */
+  .spicok {
+    display: none;
+    flex-direction: column;
+    background-color: #489AFF;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    word-wrap: break-word;
+  }
+
+  .spicok.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .burger span {
+    display: block;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+  }
+
+  /* Перенос строк в таблицах или списках */
+  .opppo1 li {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Расширяем секции */
+  .container {
+    width: 90% !important;
+  }
+
+  /* Обеспечиваем перенос текста в секциях */
+  .hero h2, .hero p,
+  .opopo, .opppo, .opppo1,
+  .texta a, .btn,
+  form input, form textarea,
+  .note, section h2 {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Перенос текста в таблицах */
+  table, th, td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+}
+
+/* Показываем бургер всегда поверх */
+.burger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+}
+
+.main {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#icons, #icons2 {
+  position: relative;
+  width: 15vw;
+  height: 230vh;
+  background: #fdfdfd;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#icons img, #icons2 img {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+}
+
+.contents {
+  width: 70vw;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+
+.fp-watermark,
+.fp-credits,
+.fp-footer {
+  display: none !important;
+}
+
+.section.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  height: 100vh;
+}
+
+.section.contact .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: auto;
+}
+
+form, .note {
+  flex-shrink: 0;
+}
+
+.footer {
+  flex-shrink: 0;
+  margin-top: 40px;
+}
+
+footer.footer {
+  margin: 0;
+  padding: 15px 0;
+  width: 100%;
+  background-color: #4c68af;
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+#fullpage {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 140px;
+  padding-bottom: 40px;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.scroll-dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.scroll-dots a {
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  border-radius: 50%;
+  display: block;
+  transition: background 0.3s;
+}
+
+.scroll-dots a.active {
+  background: #4c68af;
+}
+
+.section.contact {
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 160px 20px 40px;
+}
+
+.section.contact .container {
+  display: block;
+  width: 70%;
+}
+
+.opppo1 {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  text-align: left;
+}
+
+.opppo1 li {
+  white-space: nowrap;
+  line-height: 1.8;
+  margin-bottom: 5px;
+}
+
+/* Центрируем заголовок формы */
+.section.contact h2.opopo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Кастомизация полей формы */
+form input,
+form textarea {
+  padding: 12px;
+  border: 2px dashed #4c68af;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  background-color: #fdfdfd;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #489AFF;
+  box-shadow: 0 0 8px rgba(72, 154, 255, 0.3);
+  outline: none;
+}
+
+/* Более медленная прокрутка для свайпа (для браузеров) */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 140px;
+  scroll-snap-type: y mandatory;
+  transition: all 0.8s ease-in-out;
+}
+
+/* Переопределим прокрутку контейнера */
+#fullpage {
+  scroll-behavior: smooth;
+  transition: transform 1s ease-in-out;
+}
+
+
+.opppo1,
+.opppo1 li,
+.lol {
+  list-style: none;
+
+  justify-content: left;
+}
+
+
+
+.cert-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.cert-modal-content {
+  background: #fff;
+  padding: 20px;
+  max-width: 960px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  position: relative;
+}
+.cert-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  z-index: 10001;
+}
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.cert-item {
+  border: 2px dashed #4c68af;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+.cert-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  display: none;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+}
+
+
+.side-icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-icon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  opacity: 0.6;
+  user-select: none;
+  animation-name: float;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  will-change: transform;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.table-wrapper {
+  display: block;
+}
+.table-as-text-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .table-wrapper {
+    display: none !important;
+  }
+  .table-as-text-mobile {
+    display: block !important;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 1rem;
+    word-break: break-word;
+  }
+}
